@@ -35,6 +35,10 @@ Open http://127.0.0.1:3001.
 - If the server stops, the local demo keeps moving.
 - For offline reload, open the built app once. Wait for “Offline app ready”.
 - Works on phones. No map downloads, fonts, or CDN needed.
+- Zoom in, follow a track, or select the top threat.
+- Move the prediction slider from 10 to 60 seconds.
+- Watch the radar sweep and moving markers. Pause also stops radar animation.
+- Reduced motion settings turn off animation.
 - Review tracks and export fake data as JSON.
 - No real sensors, military data, or drone control.
 
@@ -55,3 +59,4 @@ npm run build
 The server runs on this computer only. PORT can change the port.
 The prediction keeps the same speed and direction. Turns can change it.
 The score is demo logic. It does not show real intent.
+
