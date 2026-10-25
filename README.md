@@ -25,6 +25,10 @@ Open http://127.0.0.1:3001.
 ## Main points
 
 - React, TypeScript, Tailwind CSS, and Node.js.
+- Menu: Overview, Live radar, Threats, Prediction, Event log, About / Team, Contact Us.
+- Team: Namit leads and makes the design and UI. Ayush builds the frontend. Lucky and Aniket build the backend.
+- Contact: prepare a message, then review it on GitHub. Nothing is sent from the website.
+- Page links work offline. The live session stays open as you change sections.
 - Watch 20 fake tracks. New data arrives every 250 ms.
 - Select a track to see its speed, height, and score.
 - Dashed lines show where it may be in 30 seconds.
