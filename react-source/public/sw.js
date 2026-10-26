@@ -1,4 +1,4 @@
-const CACHE = 'sky-shield-v1';
+const CACHE = 'sky-shield-v2-bunker';
 const ready = async () => {
   const cache = await caches.open(CACHE);
   if (await cache.match('/')) for (const client of await self.clients.matchAll({ includeUncontrolled: true })) client.postMessage('SKY_CACHE_READY');
@@ -9,7 +9,7 @@ self.addEventListener('install', event => {
     const response = await fetch('/', { cache: 'reload' });
     if (!response.ok) throw new Error('App unavailable');
     const html = await response.clone().text();
-    const assets = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/g)].map(m => m[1]).filter(p => p.startsWith('/assets/') || p === '/icon.svg' || p === '/manifest.webmanifest');
+    const assets = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/g)].map(m => m[1]).filter(p => p.startsWith('/assets/') || p === '/bunker-intro.js' || p === '/icon.svg' || p === '/manifest.webmanifest');
     await cache.addAll(assets);
     await cache.put('/', response);
     await self.skipWaiting();
@@ -33,7 +33,7 @@ self.addEventListener('fetch', event => {
         if (!response.ok) throw new Error('Server unavailable');
         // Cache new bundles before replacing the offline HTML.
         const html = await response.clone().text();
-        const assets = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/g)].map(m => m[1]).filter(p => p.startsWith('/assets/'));
+        const assets = [...html.matchAll(/(?:src|href)=["']([^"']+)["']/g)].map(m => m[1]).filter(p => p.startsWith('/assets/') || p === '/bunker-intro.js');
         await cache.addAll(assets); await cache.put('/', response.clone()); return response;
       } catch { return await cache.match('/') || Response.error(); }
     }

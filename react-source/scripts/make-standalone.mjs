@@ -19,6 +19,7 @@ js = js.replace(workerGuard, 'if(location.protocol==="file:"||!("serviceWorker"i
 if (/\bimport\.meta\b/.test(js)) throw new Error('Bundle still needs module-only features.');
 // Escape HTML-sensitive sequences inside the embedded JavaScript.
 js = js.replace(/<(\/?script|!--)/gi, match => '\\x3c' + match.slice(1));
+const intro = await readFile(resolve(root, 'public/bunker-intro.js'), 'utf8');
 const output = `<!doctype html>
 <html lang="en">
 <head>
@@ -48,6 +49,7 @@ ${js}
     } catch (error) { showStartupError(error); }
   })();
   </script>
+  <script>${intro}</script>
 </body>
 </html>
 `;
