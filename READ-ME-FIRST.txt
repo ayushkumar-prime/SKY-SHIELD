@@ -1,0 +1,14 @@
+SKY SHIELD - OPEN THIS WEBSITE
+
+1. Extract the ZIP first.
+2. Open the sky-shield folder.
+3. Double-click index.html.
+4. Use Microsoft Edge or Google Chrome.
+
+The main index.html contains the complete local demo.
+No npm or server is needed for that file.
+
+The react-source folder contains the editable React and TypeScript project.
+Do not double-click react-source/index.html; it needs the React development server.
+
+If the main page shows an error box, copy that error and share it.

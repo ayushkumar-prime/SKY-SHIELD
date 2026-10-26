@@ -13,6 +13,7 @@ export function useFeed(low: boolean, local: boolean, paused: boolean) {
   const [lastServer, setLastServer] = useState<number | null>(null);
   const [cache, setCache] = useState('Preparing offline cache');
   useEffect(() => {
+    if (location.protocol === 'file:') { setCache('Standalone file: works offline'); return; }
     if (!import.meta.env.PROD) { setCache('Offline reload needs production build'); return; }
     if (!('serviceWorker' in navigator)) { setCache('Offline reload is not supported here'); return; }
     let alive = true;
@@ -33,7 +34,7 @@ export function useFeed(low: boolean, local: boolean, paused: boolean) {
       if (!pausedRef.current) setSnapshot(next);
       if (Date.now() - lastSave > 5000) { try { localStorage.setItem('sky-snapshot', JSON.stringify(next)); } catch { /* no storage required */ } lastSave = Date.now(); }
     };
-    const stream = local ? null : new EventSource(`/api/stream?low=${low ? 1 : 0}`);
+    const stream = local || location.protocol === 'file:' ? null : new EventSource(`/api/stream?low=${low ? 1 : 0}`);
     if (stream) {
       stream.onmessage = event => {
         try {
