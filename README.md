@@ -16,6 +16,6 @@ No npm or server is needed for this local demo.
 - Prediction math and a time slider.
 - Navigation, About / Team, and Contact Us.
 - Namit: team leader, website designer, and UI maker.
-- Ayush: frontend. Lucky and Aniket: backend.
+- Ayush and Lucky: frontend  , Aniket and namit:backend 
 - The editable React project is in react-source.
 - Do not open react-source/index.html directly. Follow its README for development.
