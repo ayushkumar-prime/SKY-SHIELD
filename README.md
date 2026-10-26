@@ -1,6 +1,6 @@
 # SKY SHIELD
 
-A hackathon demo. All drone data is fake.
+A hackathon demo. All drone data is simulated.
 
 ## Open the website
 
@@ -15,7 +15,7 @@ No npm or server is needed for this local demo.
 - Moving tracks, radar animation, and threat scores.
 - Prediction math and a time slider.
 - Navigation, About / Team, and Contact Us.
-- Namit: team leader, website designer, and UI maker.
-- Ayush and Lucky: frontend  , Aniket and namit:backend 
+- Namit: team leader, website designer, UI maker, and backend developer.
+- Ayush and Lucky: frontend. Namit and Aniket: backend.
 - The editable React project is in react-source.
 - Do not open react-source/index.html directly. Follow its README for development.

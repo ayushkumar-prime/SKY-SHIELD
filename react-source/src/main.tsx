@@ -61,7 +61,7 @@ function App() {
     <main id="main-content" tabIndex={-1}>
       <div className="intro flex flex-wrap items-end justify-between gap-3"><div><p className="eyebrow">CONTROL ROOM / FICTIONAL SECTOR A</p><h2 id="page-heading" tabIndex={-1}>{pageInfo.title}</h2><p>{pageInfo.description}</p></div><div className="feed-state" role="status" hidden={!dashboardPage}><i className={source === 'server' ? 'live-dot' : 'local-dot'} />{source === 'server' ? 'SERVER FEED' : source === 'connecting' ? 'CONNECTING…' : 'LOCAL SIMULATION'}<small>{paused ? 'VIEW PAUSED' : `UPDATED ${clock(snapshot.time)}`}</small></div></div>
       <section hidden={page !== 'overview'} className="stats grid grid-cols-2 lg:grid-cols-4 gap-3" aria-label="Airspace summary">
-        <div className="stat"><span>TRACKED OBJECTS</span><strong>{String(snapshot.tracks.length).padStart(2, '0')}</strong><small>All tracks are fake</small></div>
+        <div className="stat"><span>TRACKED OBJECTS</span><strong>{String(snapshot.tracks.length).padStart(2, '0')}</strong><small>All tracks are simulated</small></div>
         <div className="stat high-stat"><span>HIGH PRIORITY</span><strong>{String(counts.HIGH).padStart(2, '0')}</strong><small>Score 65–100 / review first</small></div>
         <div className="stat watch-stat"><span>WATCH LIST</span><strong>{String(counts.WATCH).padStart(2, '0')}</strong><small>Score 40–64 / keep watching</small></div>
         <div className="stat"><span>DATA RATE</span><strong>{rate.toFixed(1)}<em> KB/s</em></strong><small>{low ? 'Low bandwidth · 2 s packets' : 'Fast feed · 250 ms packets'}</small></div>
@@ -105,7 +105,7 @@ function App() {
       </div>
       </div>
       <section hidden={page !== 'events'} className="panel events-panel"><div className="panel-heading"><h3><span className="section-num">05</span> EVENT LOG</h3><span>Last 50 events · this session</span></div><div className="events">{events.length === 0 ? <p className="empty">Waiting for a priority change…</p> : events.map(e => <div key={e.key} className="event"><time>{clock(e.time)}</time><span className="event-level" data-level={e.level}>{e.level}</span><span>{e.text}</span></div>)}</div></section>
-      <footer className="flex flex-wrap justify-between gap-2"><span>SKY SHIELD / student prototype</span><span>Fake tracks only. No real military data. No drone control.</span><span><a href="#/about">About & team</a> · <a href="#/contact">Contact us</a></span></footer>
+      <footer className="flex flex-wrap justify-between gap-2"><span>SKY SHIELD / student prototype</span><span>Simulated tracks only. No real military data. No drone control.</span><span><a href="#/about">About & team</a> · <a href="#/contact">Contact us</a></span></footer>
     </main>
   </div>;
 }

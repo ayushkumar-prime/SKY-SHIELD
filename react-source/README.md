@@ -4,7 +4,7 @@
 
 Double-click OPEN-SKY-SHIELD.html.
 No npm, Node.js, server, or internet is needed for this local demo.
-All fake tracks run in your browser. The menu, team page, and contact draft work too.
+All simulated tracks run in your browser. The menu, team page, and contact draft work too.
 Posting a contact draft on GitHub needs internet.
 
 You can also double-click OPEN-WEBSITE.cmd.
@@ -18,7 +18,7 @@ The real page code is here:
 - src/Pages.tsx: navigation, About / Team, and Contact Us.
 - src/Radar.tsx: radar, zoom, and animations.
 - src/styles.css: website design and mobile layout.
-- shared/simulation.ts: fake movement, prediction, and threat scores.
+- shared/simulation.ts: simulated movement, prediction, and threat scores.
 - server/index.ts: Node.js server and live feed.
 
 ## Edit in VS Code
@@ -49,8 +49,8 @@ node scripts/make-standalone.mjs
 
 ## Team
 
-- Namit: team leader, website designer, and UI maker.
-- Ayush: frontend developer.
-- Lucky and Aniket: backend developers.
+- Namit: team leader, website designer, UI maker, and backend developer.
+- Ayush and Lucky: frontend developers.
+- Namit and Aniket: backend developers.
 
-Only fake data. No real sensors, military data, or drone control.
+Only simulated data. No real sensors, military data, or drone control.

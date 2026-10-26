@@ -39,6 +39,6 @@ const server = createServer(async (req, res) => {
     res.writeHead(200, { 'Content-Type': mime[extname(path)] || 'application/octet-stream', 'Cache-Control': path.includes(`${sep}assets${sep}`) ? 'public, max-age=31536000, immutable' : 'no-cache' }); res.end(data);
   } catch { res.writeHead(404).end('File not found. Run npm run build first.'); }
 });
-server.listen(port, '127.0.0.1', () => console.log(`SKY SHIELD: http://127.0.0.1:${port} (fake data only)`));
+server.listen(port, '127.0.0.1', () => console.log(`SKY SHIELD: http://127.0.0.1:${port} (simulated data only)`));
 function shutdown() { clearInterval(timer); for (const res of clients.keys()) res.end(); server.close(); }
 process.on('SIGTERM', shutdown); process.on('SIGINT', shutdown);
